@@ -55,5 +55,5 @@ def test_logout(driver):
     driver.find_element("id", "react-burger-menu-btn").click()
     driver.find_element("id", "logout_sidebar_link").click()
     assert "https://www.saucedemo.com/" in driver.current_url
-    time.sleep(3)
+
 

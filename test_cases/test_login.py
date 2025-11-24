@@ -18,4 +18,3 @@ def test_invalid_login(driver):
     login_page.login("wrong_user", "wrong_pass")
 
     assert "Epic sadface" in login_page.get_error()
-    time.sleep(3)
