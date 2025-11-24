@@ -1,3 +1,5 @@
+import time
+
 from POM.login_page import LoginPage
 from POM.inventory_page import InventoryPage
 
@@ -16,3 +18,4 @@ def test_invalid_login(driver):
     login_page.login("wrong_user", "wrong_pass")
 
     assert "Epic sadface" in login_page.get_error()
+    time.sleep(3)

@@ -70,3 +70,4 @@ def test_successful_checkout_flow(driver):
 
     checkout.go_back_home()
     assert "inventory" in driver.current_url
+    time.sleep(3)
