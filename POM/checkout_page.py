@@ -4,20 +4,17 @@ from POM.base_page import BasePage
 
 class CheckoutPage(BasePage):
 
-    # Step One
     FIRST_NAME = (By.ID, "first-name")
     LAST_NAME = (By.ID, "last-name")
     POSTAL_CODE = (By.ID, "postal-code")
     CONTINUE_BUTTON = (By.ID, "continue")
     ERROR_MSG = (By.CSS_SELECTOR, "h3[data-test='error']")
 
-    # Step Two Overview
     ITEM_TOTAL = (By.CLASS_NAME, "summary_subtotal_label")
     TAX = (By.CLASS_NAME, "summary_tax_label")
     TOTAL = (By.CLASS_NAME, "summary_total_label")
     FINISH_BUTTON = (By.ID, "finish")
 
-    # Success Page
     COMPLETE_HEADER = (By.CLASS_NAME, "complete-header")
     BACK_HOME = (By.ID, "back-to-products")
 

@@ -24,10 +24,9 @@ class InventoryPage(BasePage):
         self.click(self.CART_ICON)
 
     def sort_by_z_to_a(self):
-            # Click dropdown
+            # dropdown
         self.click(self.SORT_DROPDOWN)
-
-            # Now click the Z -> A option
+            # Now click the Z -> A
         self.click(self.OPTION_Z_TO_A)
 
     def open_first_product(self):
