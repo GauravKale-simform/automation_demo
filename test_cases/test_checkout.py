@@ -1,5 +1,3 @@
-import time
-
 from POM.login_page import LoginPage
 from POM.inventory_page import InventoryPage
 from POM.cart_page import CartPage
@@ -34,8 +32,6 @@ def test_remove_item_from_cart(driver):
     cart = CartPage(driver)
 
     cart.remove_first_item()
-    time.sleep(1)
-
     assert cart.get_cart_count() == 0
 
 

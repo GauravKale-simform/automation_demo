@@ -1,4 +1,3 @@
-import time
 from POM.login_page import LoginPage
 from POM.inventory_page import InventoryPage
 from POM.cart_page import CartPage
@@ -17,7 +16,6 @@ def test_add_to_cart(driver):
     inventory = InventoryPage(driver)
     inventory.add_first_product()
     inventory.open_cart()
-    time.sleep(10)
     cart = CartPage(driver)
     assert cart.is_loaded()
     assert cart.get_cart_item_name() != ""
@@ -36,7 +34,6 @@ def test_sort_products(driver):
     inventory = InventoryPage(driver)
     inventory.sort_by_z_to_a()
     first_item_text = inventory.find((By.CLASS_NAME, "inventory_item_name")).text
-    time.sleep(10)
     assert first_item_text[0] in "ZYXWVUTSRQPONMLKJIHGFEDCBA"
 
 
@@ -46,7 +43,6 @@ def test_open_product_details(driver):
     inventory = InventoryPage(driver)
     product_name = inventory.find(inventory.FIRST_PRODUCT).text
     inventory.open_first_product()
-    time.sleep(10)
     product = ProductPage(driver)
     assert product.get_title() == product_name
 
@@ -55,6 +51,5 @@ def test_logout(driver):
     login(driver)
     inventory = InventoryPage(driver)
     driver.find_element("id", "react-burger-menu-btn").click()
-    time.sleep(3)
     driver.find_element("id", "logout_sidebar_link").click()
     assert "https://www.saucedemo.com/" in driver.current_url
