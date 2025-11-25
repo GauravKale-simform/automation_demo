@@ -46,6 +46,7 @@ def test_logout(driver):
     login(driver)
     inventory = InventoryPage(driver)
     driver.find_element("id", "react-burger-menu-btn").click()
+    time.sleep(1)
     driver.find_element("id", "logout_sidebar_link").click()
     assert "https://www.saucedemo.com/" in driver.current_url
 
